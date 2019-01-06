@@ -1,0 +1,171 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="taskpro">
+<head>
+    <title>Update Project</title>
+
+    <!-- SCROLLS -->
+  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  	<!-- load bootstrap -->
+  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+       	  <script src="js/controllers/TaskProjController.js"></script>
+
+
+    	<!-- load up our controller -->
+    	<script src="js/services/efforts.js"></script>
+    	<!-- load our effort service -->
+    	<script src="js/core.js"></script>
+    	<!-- load our main application -->
+
+	<style>
+	h1,table.center {
+			margin-left: 500px;
+			margin-right: auto;
+			margin-top: 50px;
+		}
+		</style>
+
+</head>
+
+
+<body  ng-controller="taskproController">
+  <div class="jumbotron text-center">
+  			<h1>Effort Tracker</h1>
+  		</div>
+        <form name="myForm">
+            <table class="center" cellspacing="5px">
+
+                <tr>
+                    <td>
+                        Project Id:</td>
+                    <td><input type="text" name="formData.project_id" ng-model="formData.project_id" placeholder="Project Id" required>
+                    </td>
+                    <td>
+                        <center>
+                            <button type="button" ng-click="fetchDetails()">Fetch ProjectDetails</button></center>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Project Name:</td>
+                    <td><input type="text" ng-model="formData.project_name" placeholder="Project Name" >
+
+                    </td>
+                    <td>
+                        Fundee:</td><td><input type="text" ng-model="formData.fundee" placeholder="Fundee">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      Cost Centre:</td><td><input type="text" ng-model="formData.cost_center" placeholder=" Cost Centre">
+                    </td>
+                    <td>
+                        Project Start Date:</td><td><input type="text" ng-model="formData.project_startdate" placeholder="Project Start Date">
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Project End Date:</td><td><input type="text" ng-model="formData.project_enddate" placeholder="Project End Date">
+                    </td>
+                   <td>
+                       Supplier Id:</td>
+                   <td><input type="text" ng-model="formData.supplierid" placeholder="Supplier Id">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       Expenses:</td>
+                   <td><input type="text" ng-model="formData.expenses" placeholder="Expenses">
+                   </td>
+                   <td>
+                       TD Contract:</td><td><input type="text" ng-model="formData.td_contract" placeholder=" TD Contract">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                     Supplier Contract:</td><td><input type="text" ng-model="formData.supplier_contract" placeholder=" Supplier Contract">
+                   </td>
+                   <td>
+                      Invoice Number:</td>
+                   <td><input type="text" ng-model="formData.invoice_number" placeholder=" Invoice Number">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       Contract Type:</td>
+                   <td><input type="text" ng-model="formData.contract_type" placeholder="Contract Type">
+                   </td>
+                   <td>
+                      Invoice:</td><td><input type="text" ng-model="formData.invoice" placeholder=" Invoice">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                     Currency:</td><td><input type="text" ng-model="formData.currency" placeholder=" Currency">
+                   </td>
+                   <td>
+                      LOB:</td>
+                   <td><input type="text" ng-model="formData.lob" placeholder=" LOB">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       Project Desc:</td>
+                   <td><input type="text" ng-model="formData.project_desc" placeholder="Project Desc">
+                   </td>
+                   <td>
+                       SOW:</td><td><input type="text" ng-model="formData.sow" placeholder="SOW">
+                   </td>
+               </tr>
+        <tr>
+                   <td>
+                       TD RManager:</td><td><input type="text" ng-model="formData.td_rmanager" placeholder="TD RManager">
+                   </td>
+                   <td>
+                      Engagement Type:</td><td><input type="text" ng-model="formData.engagement_type" placeholder=" Engagement Type">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                     Core Flex:</td><td><input type="text" ng-model="formData.core_flex" placeholder=" Core Flex">
+                   </td>
+                   <td>
+                       Project Code:</td><td><input type="text" ng-model="formData.project_code" placeholder="Project Code">
+                   </td>
+               </tr>
+        <tr>
+                   <td>
+                     PM:</td><td><input type="text" ng-model="formData.pm" placeholder="PM">
+                   </td>
+                   <td>
+                      ADM:</td><td><input type="text" ng-model="formData.adm" placeholder=" adm">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                     Supplier Name:</td><td><input type="text" ng-model="formData.suppliername" placeholder=" suppliername">
+                   </td>
+               </tr>
+                <tr>
+                    <td>
+                        <center>
+							<button  ng-click="updateProject()">Update Project</button></center>
+                    </td><td>
+                      <center>
+						<button  ng-click="deleteproject()">Delete Project</button></center>
+					</td>
+                </tr>
+            </table>
+        </form>
+</body>
+
+</html>

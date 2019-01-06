@@ -1,0 +1,65 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angularjs-datepicker',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json node-effort@0.0.1 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'angularjs-datepicker', null ]
+8 verbose cache add name=undefined spec="angularjs-datepicker" args=["angularjs-datepicker",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'angularjs-datepicker',
+9 verbose parsed url   path: 'angularjs-datepicker',
+9 verbose parsed url   href: 'angularjs-datepicker' }
+10 silly lockFile 81f62d5d-angularjs-datepicker angularjs-datepicker
+11 verbose lock angularjs-datepicker C:\Users\sh329785\AppData\Roaming\npm-cache\81f62d5d-angularjs-datepicker.lock
+12 silly lockFile 81f62d5d-angularjs-datepicker angularjs-datepicker
+13 silly lockFile 81f62d5d-angularjs-datepicker angularjs-datepicker
+14 verbose addNamed [ 'angularjs-datepicker', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 9f727d89-angularjs-datepicker angularjs-datepicker@
+17 verbose lock angularjs-datepicker@ C:\Users\sh329785\AppData\Roaming\npm-cache\9f727d89-angularjs-datepicker.lock
+18 silly addNameRange { name: 'angularjs-datepicker', range: '*', hasData: false }
+19 verbose request where is /angularjs-datepicker
+20 verbose request registry https://registry.npmjs.org/
+21 verbose request id d25c172e4066426b
+22 verbose url raw /angularjs-datepicker
+23 verbose url resolving [ 'https://registry.npmjs.org/', './angularjs-datepicker' ]
+24 verbose url resolved https://registry.npmjs.org/angularjs-datepicker
+25 verbose request where is https://registry.npmjs.org/angularjs-datepicker
+26 info trying registry request attempt 1 at 17:17:00
+27 http GET https://registry.npmjs.org/angularjs-datepicker
+28 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=Parse Error
+29 info trying registry request attempt 2 at 17:17:10
+30 http GET https://registry.npmjs.org/angularjs-datepicker
+31 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=Parse Error
+32 info trying registry request attempt 3 at 17:18:10
+33 http GET https://registry.npmjs.org/angularjs-datepicker
+34 silly lockFile 9f727d89-angularjs-datepicker angularjs-datepicker@
+35 silly lockFile 9f727d89-angularjs-datepicker angularjs-datepicker@
+36 error network tunneling socket could not be established, cause=Parse Error
+36 error network This is most likely not a problem with npm itself
+36 error network and is related to network connectivity.
+36 error network In most cases you are behind a proxy or have bad network settings.
+36 error network
+36 error network If you are behind a proxy, please make sure that the
+36 error network 'proxy' config is set properly.  See: 'npm help config'
+37 error System Windows_NT 6.1.7601
+38 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angularjs-datepicker" "--save"
+39 error cwd C:\Users\sh329785\Desktop\2-jan
+40 error node -v v0.10.38
+41 error npm -v 1.4.28
+42 error code ECONNRESET
+43 verbose exit [ 1, true ]

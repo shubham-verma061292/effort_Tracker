@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title>Leave</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="js/controllers/main.js"></script>
+  <script src="js/controllers/GridController.js"></script>
+  <script src="js/controllers/LeaveController.js"></script>
+  <script src="js/services/efforts.js"></script>
+  <script src="js/core.js"></script>
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    body {
+      padding-top: 10px;
+    }
+    
+    #effort-form {
+      margin-bottom: 25px;
+    }
+       a.right {
+      display: inline-block;
+      text-align: right;
+      width: 100%;
+    }
+  </style>
+</head>
+
+
+<body ng-app="datepickerBasicUsage">
+  <div class="jumbotron text-center">
+    <h4>Leave Tracker</h4>
+  </div>
+  <div ng-controller="AppCtrl" ng-cloak>
+ <a class="right" href="leaves.html">Apply Leaves</a>
+    <a class="right" href="leaveInterval.html">Interval Based Leave Report</a>
+
+    <table align="center">
+      <tr>
+        <td>
+          <label>Select Month</label></td>
+        <td>
+          <select ng-model="selectMonth" ng-options="month for month in months">
+            </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+  
+            <center> <button type="submit" class="btn-primary" value="submit" ng-click="generateLeaves_Report()">GenerateReport</button></center>
+         
+        </td></tr></table>
+          </div>
+</body>
+
+</html>

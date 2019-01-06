@@ -1,0 +1,7 @@
+{
+     "host":"169.254.180.249",
+    "user":"root",
+    "password":"root",
+    "database":"effort_tracker",
+    "port" : 3306
+}

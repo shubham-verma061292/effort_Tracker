@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        a.right {
+   display: inline-block;
+   text-align: right;
+   width: 100%;
+}
+        </style>
+</head>
+<body ng-controller='mainController'>
+                       <!-- <a class="right" href="/leaves.html">Leave_Tracker</a>-->
+    <form name="loginform">
+        <table class="center" cellspacing="7px">
+            <tr>
+                <td>
+                    EmployeeID:</td>
+                <td><input type="text" ng-model="formData.empid" placeholder="Employee Id" class=form-control required>
+                    <div role="alert"> <span class="error" ng-show="loginform.empid.$error.required"></span> </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:</td>
+                <td><input type="password" ng-model="formData.password" placeholder="Password" class=form-control required>
+                    <div role="alert"><span class="error" ng-show="loginform.password.$error.required"></span></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <button type="submit" ng-click="login()">Login</button></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

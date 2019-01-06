@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>Angularjs UI-Grid Example</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+
+    <script type="text/javascript">
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/GridController.js"></script>
+    <!-- load up our controller -->
+    <script src="js/services/efforts.js"></script>
+    <!-- load our effort service -->
+    <script src="js/core.js"></script>
+
+    </script>
+
+    <style type="text/css">
+        .myGrid {
+            width: 1000px;
+            height: 100px;
+        }
+        .right_align
+        {
+          float: right;
+          margin-right: 2%;
+        }
+    </style>
+
+</head>
+
+<body ng-app="scotchEffort">
+    <!--<div ng-controller="mainController">-->
+    <div ng-controller="uigridEffortCtrl">
+
+        <div>
+            <select ng-options="s.name for s in arrlist" ng-model="userSelect1" ng-change="checkselection1()">
+<option value="">--Select--</option>
+</select>
+
+            <select ng-options="x for x in interval" ng-model="userSelect2" ng-change="checkselection2()">
+<option value="">--Select--</option>
+</select> </div>
+<a href="view_efforts.html" class="right_align">Generate Effort Report</a>
+<br /><br />
+        <div ui-grid="{ data: data1, columnDefs: columnDefs, enableRowSelection: true, enableSelectAll: true}" class="grid" ui-grid-selection
+            ui-grid-edit ui-grid-cellnav>
+            <center>
+        <button type="submit"  ng-click="submit_task()">Submit</button></center>
+            </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>
+
+        Angularjs UI-Grid Example
+
+    </title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+
+
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+
+    <script type="text/javascript">
+
+var app = angular.module("uigridApp", ["ui.grid"]);
+
+app.controller("uigridCtrl", function ($scope) {
+
+$scope.arrlist = [{
+"userid": 1,
+"name": "JAN"
+}, {
+"userid": 2,
+"name": "FEB"
+}, {
+"userid": 3,
+"name": "MAR"
+}];
+$scope.facdata = [];
+$scope.columnDefines = [];
+
+$scope.checkselection1 = function () {
+	console.log('inside chkselection1');
+$scope.interval=["2017/1/1-2017/1/7","2017/1/8-2017/1/14","2017/1/15-2017/1/21","2017/1/22-2017/1/28","2017/1/29-2017/2/4"]
+//to be set from back end
+ 
+	
+}
+$scope.checkselection2 = function () {
+console.log('inside chkselection2');
+var dts=[];
+
+
+console.log($scope.userSelect2+'............');
+dts=checkselection3($scope.userSelect2);
+
+$scope.data1 = [
+	 { InvestmentID: "00123", TaskID: 'TASK-12345', Description: 'Devlopment', InputTypeCode:'RegularHour', sunday:'Fill Efforts', Monday:'Fill Efforts', Tuesday:'Fill Efforts', Wednesday:'Fill Efforts', Thursday:'Fill Efforts', Friday:'Fill Efforts', Saturday:'Fill Efforts'}
+	];
+	$scope.columnDefs = [
+	{name: 'Task_Id', cellEditableCondition:false},
+	{name: 'Task_Name', cellEditableCondition:false},
+	{name: 'Project_Id', cellEditableCondition:false},
+	{name: 'Project_Name', cellEditableCondition:false},
+	{name: dts[0], cellEditableCondition:true},
+	{name: dts[1], cellEditableCondition:true},
+	{name: dts[2], cellEditableCondition:true},
+	{name: dts[3], cellEditableCondition:true},
+	{name: dts[4], cellEditableCondition:true},
+	{name: dts[5], cellEditableCondition:true},
+	{name: dts[6], cellEditableCondition:true}
+	];	
+
+}
+	});
+
+
+var showDate=function(stend){
+
+var input=[];
+input=stend;
+var datesArray=[];
+var startdate=new Date(input[0]);
+var enddate=new Date(input[1]);
+console.log(startdate+'...>>>>>>>>>')
+console.log(enddate+'...>>>>>>>>>')
+
+console.log('inside show date');
+console.log('inside show date');
+    
+    while (startdate <= enddate) {
+        datesArray.push(new Date(startdate).toString().substring(0,15));
+        startdate.setDate(startdate.getDate() + 1);
+		console.log('inside while hello');
+    }
+	console.log(datesArray+'inside showdate fn');
+return datesArray;
+
+}
+var checkselection3=function(interval1){
+console.log(interval1+'inside chkselection 3');
+var dtinterval=[];
+dtinterval=interval1.split("-");
+var results=[];
+ results=showDate(dtinterval);
+ return results;
+
+}
+</script>
+
+    <style type="text/css">
+        .myGrid {
+            width: 1000px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="uigridApp">
+    <div ng-controller="uigridCtrl">
+
+        <div>
+
+
+
+            <select ng-options="s.name for s in arrlist" ng-model="userSelect1" ng-change="checkselection1()">
+<option value="">--Select--</option>
+</select>
+
+            <select ng-options="x for x in interval" ng-model="userSelect2" ng-change="checkselection2()">
+<option value="">--Select--</option>
+</select> </div><br /><br />
+
+
+
+        <div ui-grid="{ data: data1, columnDefs: columnDefs, enableRowSelection: true, enableSelectAll: true,}" class="grid" ui-grid-selection
+            ui-grid-edit ui-grid-cellnav></div>
+    </div>
+</body>
+
+</html>

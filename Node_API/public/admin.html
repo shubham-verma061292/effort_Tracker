@@ -1,0 +1,83 @@
+<html>
+<head>
+<style>
+
+#trans-nav { list-style-type: none; height: 40px; padding: 0; margin: 0; }
+#trans-nav { list-style-type: none; height: 40px; padding: 0; margin: 0; }
+#trans-nav li { float: left; position: relative; padding: 0; line-height: 40px; background: #5a8078 url(nav-bg.png) repeat-x 0 0; }
+#trans-nav li:hover { background-position: 0 -40px; }
+#trans-nav li a { display: block; padding: 0 15px; color: #fff; text-decoration: none; }
+#trans-nav li a:hover { color: #a3f1d7; }
+#trans-nav li ul { opacity: 0; position: absolute; left: 0; width: 17em; background: #63867f; list-style-type: none; padding: 0; margin: 0; }
+#trans-nav li:hover ul { opacity: 1; }
+#trans-nav li ul li { float: none; position: static; height: 0; line-height: 0; background: none; }
+#trans-nav li:hover ul li { height: 30px; line-height: 30px; }
+#trans-nav li ul li a { background: #63867f; }
+#trans-nav li ul li a:hover { background: #5a8078; }
+
+
+</style>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+</head>
+<body bgcolor="">
+<div class="jumbotron text-center">
+			<h1>Effort Tracker</h1>
+		</div>
+<ul id="trans-nav">
+    <li><a href="#">Task Management</a>
+     <ul>
+            <li><a href="/addTask.html">Add Task</a></li>
+            <li><a href="/UpdateTask.html">Update Task</a></li>
+            <li><a href="/UpdateTask.html">Delete Task</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Project Management</a>
+     <ul>
+            <li><a href="/addProject.html">Add Project</a></li>
+            <li><a href="/UpdateProject.html">Edit Project</a></li>
+            <li><a href="/UpdateProject.html">Delete Project</a></li>
+        </ul>
+        </li>
+         <li><a href="#">Effort Tracker</a>
+     <ul>
+            <li><a href="#/success">Fill Efforts</a></li>
+            <li><a href="#">Update Efforts</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Employee Management</a>
+     <ul>
+            <li><a href="/signup.html">Add Employee</a></li>
+            <li><a href="/updateEmp.html">Update Employee</a></li>
+            <li><a href="/updateEmp.html">Delete Employee</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Task Employee Association</a>
+        <ul>
+            <li><a href="emp_task_Association.html">Add Task to Employee</a></li>
+            <li><a href="#">Update Task to Employee</a></li>
+            <li><a href="DeleteEmpTask_Association.html">Delete Task to Employee</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Work Order Management</a>
+     <ul>
+            <li><a href="addWorkOrder.html">Add Work Order</a></li>
+            <li><a href="workorderUpdate.html">Update Work Order</a></li>
+            <li><a href="workorderUpdate.html">Delete Work Order</a></li>
+        </ul>
+    </li>
+      <li><a href="#">Reports</a>
+     <ul>
+            <li><a href="/labor_report.html">Labour Report</a></li>
+            <li><a href="/ProInvoiceingPage.html">Resource Wise Report</a></li>
+              <li><a href="/UnbilledReportPage.html">Unbilled Report</a></li>
+            <li><a href="/leaveInterval.html">Leaves Report</a></li>
+            <li><a href="#">Effort Tracker Report</a></li>
+            <li><a href="/teamwisereport.html">Team Wise Report</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+<html>

@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>Effort</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+      <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+      <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+      <script src="http://ui-grid.info/release/ui-grid.js"></script>
+      <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+      <script type="text/javascript"></script>
+      <script src="js/controllers/main.js"></script>
+      <script src="js/controllers/GridController.js"></script>
+      <!-- load up our controller -->
+      <script src="js/services/efforts.js"></script>
+      <!-- load our effort service -->
+      <script src="js/core.js"></script>
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+
+    body {
+      padding-top: 10px;
+    }
+
+    #effort-form {
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+
+<body ng-app="uigridCtrl">
+  <div class="jumbotron text-center">
+    <h4>Effort Tracker</h4>
+  </div>
+  <div ng-controller="uigridEffortCtrl">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-md-2  col-sm-2 col-lg-2 col-xs-2">
+            <label>Select Work Order Track</label>
+            <select ng-options="w.name for w in work_order_track" ng-model="select_w_o_T" >
+              <option value="">--Select--</option>
+            </select>
+          </div>
+          <div class="col-md-2  col-sm-2 col-lg-2 col-xs-2">
+            <label>Start Date</label>
+              <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+          </div>
+          <div class="col-md-2  col-sm-2 col-lg-2 col-xs-2">
+            <label>End Date</label>
+              <md-datepicker ng-model="myDate1" md-placeholder="Enter date"></md-datepicker>
+          </div>
+
+        </div>
+      </div>
+    <div class="col-md-offset-2 col-sm-offset-2 col-lg-offset-2 col-xs-offset-2" style="padding-top:10px;">
+          <button type="submit" class="btn-primary" value="submit" ng-click="generate_effort_Report()">GenerateReport</button>
+    </div>
+  </div>
+</body>
+</html>

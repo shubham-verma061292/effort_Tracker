@@ -1,0 +1,123 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchEffort">
+
+<head>
+
+
+	<title>Node/Angular Effort App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html {
+			overflow-y: scroll;
+		}
+
+		body {
+			padding-top: 50px;
+		}
+
+		#effort-form {
+			margin-bottom: 50px;
+		}
+
+		table.center {
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 70px;
+		}
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+	<!-- load angular -->
+
+	<script src="js/controllers/main.js"></script>
+	<script src="js/controllers/GridController.js"></script>
+	<!-- load up our controller -->
+	<script src="js/services/efforts.js"></script>
+	<!-- load our effort service -->
+	<script src="js/core.js"></script>
+
+	<!-- load our main application -->
+
+
+
+</head>
+<body ng-controller='mainController'>
+    <form name="addDetails">
+        <table class="center" cellspacing="7px">
+            <tr>
+                <td>
+                    EmployeeID:</td>
+                <td><input type="text" ng-model="formData.empid" placeholder="Employee Id" class=form-control required>
+                    <div role="alert"> <span class="error" ng-show="addDetails.empid.$error.required"></span> </div>
+                </td>
+                <td>
+                    <center>
+                        <button type="button" ng-click="fetchDetails()">get project</button></center>
+                </td>
+            </tr>
+						<tr>
+                <td>
+                    Workorder Id:</td>
+                <td><select ng-model="formData.workOrderId">
+									<option ng-repeat='x in workOrder_Id'>{{x}}</option>
+								</select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Task Name:</td>
+                <td><select ng-model="formData.taskName" ng-change="taskNameselect()">
+									<option ng-repeat='x in taskName' track by $index>{{x}}</option>
+								</select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Task Id:</td>
+                <td><select ng-model="formData.taskId">
+									<option>{{t_Id}}</option>
+								</select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Project Name:</td>
+                <td><select ng-model="formData.projectName" ng-change="projectNameselect()">
+									<option ng-repeat='x in projectName' track by $index>{{x}}</option>
+								</select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Project Id:</td>
+                <td><select ng-model="formData.projectId">
+									<option>{{p_Id}}</option>
+								</select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <button type="submit" ng-click="submitDetails()">Submit</button></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

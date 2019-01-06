@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <title>Leave Report</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="js/controllers/main.js"></script>
+  <script src="js/controllers/GridController.js"></script>
+  <script src="js/controllers/LeaveController.js"></script>
+  <script src="js/services/efforts.js"></script>
+  <script src="js/core.js"></script>
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    body {
+      padding-top: 10px;
+    }
+    
+    #effort-form {
+      margin-bottom: 25px;
+    }
+    
+    a.right {
+      display: inline-block;
+      text-align: right;
+      width: 100%;
+    }
+  </style>
+</head>
+
+
+<body ng-app="datepickerBasicUsage">
+  <div class="jumbotron text-center">
+    <h1>Leave Tracker</h1>
+  </div>
+  <div ng-controller="AppCtrl" ng-cloak>
+    <a class="right" href="selectLeaveMonth.html">Month Wise Report</a>
+    <a class="right" href="leaves.html">Apply Leaves</a>
+    <table align="center" cellpadding="50" cellspacing="50" width="400" height="150">
+      <md-content layout-padding>
+        <tr>
+          <td>
+            <label>Start Date</label></td>
+          <td>
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>End Date</label></td>
+          <td>
+            <md-datepicker ng-model="myDate1" md-placeholder="Enter date"></md-datepicker>
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+
+      </md-content>
+      <div class="col-md-offset-2 col-sm-offset-2 col-lg-offset-2 col-xs-offset-2" style="padding-top:10px;">
+        <center> <button type="submit" class="btn-primary" value="submit" ng-click="generateIntervalReport()">Generate leaves Report</button></center>
+        </td>
+        </tr>
+      </div>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="effortController">
+
+<head>
+    <title>Node/Angular Effort App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        
+        body {
+            padding-top: 50px;
+        }
+        
+        #effort-form {
+            margin-bottom: 50px;
+        }
+        
+        table.center {
+            margin-left: 500px;
+            margin-right: auto;
+            margin-top: 70px;
+        }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- load angular -->
+
+    <script src="js/controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="js/services/efforts.js"></script>
+    <!-- load our effort service -->
+    <script src="js/core.js"></script>
+    <!-- load our main application -->
+
+
+
+</head>
+
+
+<body ng-controller="mainController">
+    <h1>
+        <div class="jumbotron text-center">
+            <h1>Effort Tracker</h1>
+        </div>
+    </h1>
+    <form>
+        <table class="center" cellspacing="5px">
+            <center>
+                <h1>Add Employee</h1>
+            </center>
+            <tr>
+                <td>
+                    Employee Id:</td>
+                <td><input type="text" ng-model="formData.empid" placeholder="Employee Id" required>
+                </td>
+                <td>
+                    First Name:</td>
+                <td><input type="text" ng-model="formData.firstname" placeholder="First Name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name:</td>
+                <td><input type="text" ng-model="formData.lastname" placeholder="Last Name" required>
+                </td>
+                <td>
+                    Designation:</td>
+                <td><input type="text" ng-model="formData.designation" placeholder="designation" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:</td>
+                <td><input type="password" ng-model="formData.password" placeholder="Password" required>
+                </td>
+                <td>
+                    Status:</td>
+                <td><input type="text" ng-model="formData.status" placeholder="Status" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Role:</td>
+                <td>
+                    <select ng-model="formData.role" ng-options="r for r in role" placeholder="Role" required>
+            </select>
+                </td>
+                <td>
+                    Team:</td>
+                <td>
+                    <select ng-model="formData.team" ng-options="t for t in team" placeholder="Team" required>
+            </select></td>
+            </tr>
+            <tr>
+                <td>
+                    Role_grouping:</td>
+                <td>
+                    <select ng-options="rg for rg in rolegrouping" ng-model="formData.rolegrouping" placeholder="rolegrouping" required
+            </select></td>
+                <td>
+                    Skill_premium:</td>
+                <td>
+                    <select ng-options="sk for sk in skillpremium" ng-model="formData.skillpremium" placeholder="skillpremium" required>
+            </select></td>
+            </tr>
+            <tr>
+                <td>
+                    Rate:</td>
+                <td><input type="text" ng-model="formData.rate" placeholder="Rate" required>
+                </td>
+
+                <td>
+                    ACF2ID:</td>
+                <td><input type="text" ng-model="formData.acf2id" placeholder="acf2id" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Res_StartDate:</td>
+                <td><input type="text" ng-model="formData.startdate" placeholder="yyyy/mm/dd" required>
+                </td>
+
+                <td>
+                    Res_EndDate:</td>
+                <td><input type="text" ng-model="formData.enddate" placeholder="yyyy/mm/dd" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Skill_profile:</td>
+                <td><input type="text" ng-model="formData.skillprofile" placeholder="skillprofile" required>
+                </td>
+                <td><button type="submit" ng-click="getTechPro()">Get Associated Data</button></td>
+            </tr>
+            <tr>
+                <td>
+                    Technology:</td>
+                <td><input type="text" ng-model="formData.technology" placeholder="technology" required>
+                </td>
+                <td>
+                    Profile_skills:</td>
+                <td><input type="text" ng-model="formData.profileskills" placeholder="profileskills" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Location:</td>
+                <td><input type="text" ng-model="formData.location" placeholder="location" required>
+                </td>
+
+                <td>
+                    Work_location:</td>
+                <td><input type="text" ng-model="formData.worklocation" placeholder="worklocation" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WorkPermitCategory:</td>
+                <td><input type="text" ng-model="formData.work_permit_category" placeholder="work_permit_category" required>
+                </td>
+
+                <td>
+                    Shift_Address:</td>
+                <td><input type="text" ng-model="formData.shift_addrs" placeholder="shift_addrs" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wipro Mail id:</td>
+                <td><input type="text" ng-model="formData.wipro_mailid" placeholder="wipro_mailid" required>
+                </td>
+
+                <td>
+                    Td mail id:</td>
+                <td><input type="text" ng-model="formData.td_mailid" placeholder="td_mailid" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Departure_Date:</td>
+                <td><input type="text" ng-model="formData.departure_date" placeholder="yyyy/mm/dd" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <button type="submit" ng-click="signup()">Submit</button></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
